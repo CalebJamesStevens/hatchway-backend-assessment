@@ -1,0 +1,14 @@
+{
+  "name": "backend-assessment",
+  "version": "1.0.0",
+  "description": "Simple Backend API for Fetching Post Data",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
