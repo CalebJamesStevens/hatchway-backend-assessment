@@ -15,6 +15,13 @@ describe('GET /api/ping', () => {
 
 describe('GET /api/posts', () => {
     it('Returns error if tags paramter is null', () => {
-        
+        return request(app)
+        .get('/api/posts')
+        .query({'tags':null})
+        .expect('Content-Type', /json/)
+        .expect(400)
+        .then((response) => {
+            expect(response.body).toEqual({error: "Tags parameter is required"})
+        })
     })
 })
