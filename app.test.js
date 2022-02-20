@@ -3,11 +3,12 @@ const app = require('./index')
 
 describe('GET /api/ping', () => {
     it('Returns success when pinged', () => {
-        request(app)
+        return request(app)
         .get('/api/ping')
         .expect('Content-Type', /json/)
-        .expect(200, {
-            "success": true
+        .expect(200)
+        .then((response) => {
+            expect(response.body).toEqual({success: true})
         })
     })
 })
