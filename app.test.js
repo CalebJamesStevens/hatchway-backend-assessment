@@ -1,5 +1,5 @@
 const request = require('supertest')
-const _ = require('lodash/core');
+const _ = require('lodash');
 const app = require('./index')
 
 describe('GET /api/ping', () => {
@@ -54,7 +54,7 @@ describe('GET /api/posts', () => {
     it('Returns array of post objects containing multiple tags', () => {
         return request(app)
         .get('/api/posts')
-        .query({'tags':['tech, history']})
+        .query({'tags':['tech,history']})
         .expect('Content-Type', /json/)
         .expect(200)
         .then((response) => {
@@ -77,13 +77,20 @@ describe('GET /api/posts', () => {
     })
 
     it('contains no post duplicates', () => {
-        return request(app)
+        let same = false;
+        const p = request(app)
         .get('/api/posts')
-        .query({'tags':['tech, history']})
+        .query({'tags':['tech,history']})
         .expect('Content-Type', /json/)
         .expect(200)
         .then((response) => {
-            
+            const deduped = [];
+            response.body.posts.forEach(post => deduped.every(d => d.id !== post.id) && deduped.push(post))
+            same = (deduped.length == response.body.posts.length)
+            return same
         })
+
+
+        
     })
 })
