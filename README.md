@@ -13,7 +13,7 @@ This backend interacts directly with Hatchway's Blog Post API, specifically for 
 If you wish to run the server, you must:
 
 1. [install Node](https://nodejs.org/en/).
-2. Download and unzip the project from provided file for clone the [github repo](https://github.com/CalebJamesStevens/hatchway-backend-assessment).
+2. Download and unzip the project from provided file or clone the [github repo](https://github.com/CalebJamesStevens/hatchway-backend-assessment).
 3. Open a terminal and navigate to the project directory
 4. Instal dependencies by typing this into the terminal:
 
@@ -29,7 +29,9 @@ npm start
 
 The server should now be running which is indicated by a log in the terminal that looks like:
 
+```
 Server started on port 5000
+```
 
 ## Testing the project
 
