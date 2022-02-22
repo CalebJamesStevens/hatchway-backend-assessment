@@ -4,7 +4,7 @@ This project is a small api that accesses Hatchways post api, processes the requ
 
 The server itself is implemented in NodeJS using Express.
 
-## Integration with the Klarna on Demand API
+## Integration with the Hatchway API
 
 This backend interacts directly with Hatchway's Blog Post API, specifically for the purpose of find posts posts by specified tags.
 
