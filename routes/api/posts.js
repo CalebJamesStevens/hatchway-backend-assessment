@@ -37,15 +37,14 @@ router.get('/', async (req, res) => {
   const tags = queries.tags.split(',');
 
   //Maps fetch request for every tags to run calls in parallell
-  const promises = tags.map(async (tag) => {
+  const fetchTags = async (tag) => {
     let response = await fetch(
       `https://api.hatchways.io/assessment/blog/posts?tag=${tag}`
     );
     const data = await response.json();
     return data.posts;
-  });
-
-  let posts = await Promise.all(promises);
+  };
+  let posts = await Promise.all(tags.map(fetchTags));
 
   //Flatten posts array so there is only one array for multiplse tags
   posts = posts.flat();
