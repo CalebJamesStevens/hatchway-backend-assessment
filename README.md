@@ -24,7 +24,7 @@ npm install
 5. Start the server by typing this into the terminal.
 
 ```
-npm start
+npm run start
 ```
 
 The server should now be running which is indicated by a log in the terminal that looks like:
@@ -38,5 +38,5 @@ Server started on port 5000
 If you wich to run the test file provided by me you may simply navigate to the project directory in a terminal and run this command:
 
 ```
-npm test
+npm run test
 ```
